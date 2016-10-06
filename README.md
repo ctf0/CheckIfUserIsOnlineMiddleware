@@ -4,7 +4,7 @@ https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel
 - Then add this to the end of the ***web*** array in **app/Http/Kernel.php**
 
 ```php
-    'App\Http\Middleware\CheckIfUserIsOnlineMiddleware'
+'App\Http\Middleware\CheckIfUserIsOnlineMiddleware'
 ```
 
 - and now add the below method to ur User Model usually in `app/User.php`
