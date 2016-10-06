@@ -1,4 +1,3 @@
-# CheckIfUserIsOnlineMiddleware
 https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel
 
 - save file to `app/Http/Middleware/CheckIfUserIsOnlineMiddleware.php`
