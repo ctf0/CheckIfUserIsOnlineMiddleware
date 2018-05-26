@@ -12,7 +12,7 @@ https://erikbelusic.com/tracking-if-a-user-is-online-in-laravel
 ```php
 public function isOnline()
 {
-    return Cache::has('user-is-online-' . $this->id);
+    return app('cache')->has('user-is-online-' . $this->id);
 }
 ```
 

@@ -2,9 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
-use Cache;
-use Carbon;
 use Closure;
 
 class CheckIfUserIsOnlineMiddleware
@@ -19,9 +16,10 @@ class CheckIfUserIsOnlineMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()) {
-            $expiresAt = Carbon::now()->addMinutes(5);
-            Cache::put('user-is-online-'.Auth::user()->id, true, $expiresAt);
+        if (auth()->check()) {
+            $expiresAt = now()->addMinutes(5);
+            
+            app('cache')->put('user-is-online-' . auth()->user()->id, true, $expiresAt);
         }
 
         return $next($request);
